@@ -23,7 +23,7 @@
                 <a href="./index.html" class="header-logo link">Web<span class="header-colored-logo">Studio</span></a>
                 <ul class="header-nav">
                     <li class="header-nav-list">
-                        <a class="header-nav-item link " href="./index.html">Studio</a>
+                        <a class="header-nav-item link current" href="./index.html">Studio</a>
                     </li>
                     <li class="header-nav-list">
                         <a class="header-nav-item link" href="#portfolio">Portfolio</a>
@@ -459,7 +459,22 @@
                     </li>
                 </ul>
             </div>
-            <div class="footer-subscribe-part">
+            <div class="footer-subscribe-wrapper">
+                <Form class="subscribe-form">
+                    <div class="subscribe-form-wrapper">
+                        <label class="subscribe-form-label" for="footer-email">Subscribe</label>
+                        <div class="footer-subscribe-container">
+                            <input class="subscribe-form-input" type="email" id="footer-email"
+                                name="subscribe_user_email" required placeholder="E-mail">
+                            <button class="subscribe-form-button" type="submit">
+                                Subscribe
+                                <svg class="subscribe-form-button-icon" width="24" height="24">
+                                    <use href="./images/icons.svg#icon-subscribe-icon"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </Form>
             </div>
         </div>
     </footer>
@@ -509,10 +524,14 @@
                         placeholder="Text input"></textarea>
                 </div>
                 <div class="order-form-checkbox-wrapper">
-                    <input class="order-form-checkbox" type="checkbox" id="user-privacy" name="user_privacy"
-                        value="true" required>
+                    <input class="order-form-checkbox visually-hidden" type="checkbox" id="user-privacy"
+                        name="user_privacy" value="true" required>
                     <label for="user-privacy" class="order-form-checkbox-label">
-                        <span class="order-form-castom-checkbox"></span>
+                        <span class="order-form-castom-checkbox">
+                            <svg class="order-form-checkbox-icon" width="10" height="8">
+                                <use href="./images/icons.svg#icon-checkbox"></use>
+                            </svg>
+                        </span>
                         I accept the terms and conditions of the <a class="order-form-link" href="">Privacy
                             Policy</a>
                     </label>
