@@ -39,6 +39,7 @@ p {
 
 button {
     cursor: pointer;
+    border: none;
 }
 
 .container {
@@ -646,9 +647,12 @@ button {
     height: 100%;
     background-color: rgba(46, 47, 66, 0.40);
 
-    opacity: 0;
+    /* opacity: 0;
     visibility: hidden;
-    pointer-events: none;
+    pointer-events: none; */
+
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-open {
@@ -668,9 +672,16 @@ button {
     padding: 72px 24px 24px 24px;
     border-radius: 4px;
     background: #FCFCFC;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 24px;
     right: 24px;
@@ -678,7 +689,7 @@ button {
     height: 24px;
     border-radius: 50%;
     background-color: #E7E9FC;
-    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 0;
     line-height: 0;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -686,7 +697,7 @@ button {
 
 .close-btn-icon {
     stroke: rgba(0, 0, 0, 0.10);
-    transition: fill 250ms ease-out;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-button:hover,
@@ -709,8 +720,8 @@ button {
     margin-bottom: 16px;
 }
 
-.order-form-input-wrapper {
-    position: relative;
+.order-form-field-wraper {
+    margin-bottom: 8px;
 }
 
 .order-form-field-label {
@@ -718,13 +729,13 @@ button {
     color: #8E8F99;
     font-size: 12px;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     margin-bottom: 4px;
 }
 
 .order-form-input-wrapper {
-    margin-bottom: 8px;
+    position: relative;
 }
 
 .order-form-input {
@@ -734,7 +745,8 @@ button {
     border-radius: 4px;
     border: 1px solid rgba(46, 47, 66, 0.40);
     padding-left: 38px;
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: transparent;
+    outline: transparent transition:border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .order-form-input:focus {
@@ -755,12 +767,16 @@ button {
     fill: #4D5AE5;
 }
 
+.order-form-texteria-wraper {
+    margin-bottom: 16px;
+}
+
 .order-form-coment {
     width: 100%;
     height: 120px;
     font-size: 12px;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     padding-top: 8px;
     padding-left: 16px;
@@ -770,8 +786,10 @@ button {
     border: 1px solid rgba(46, 47, 66, 0.40);
     color: rgba(46, 47, 66, 0.40);
     resize: none;
-    transition: border-color 250ms;
-    margin-bottom: 16px;
+    background-color: transparent;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    ;
 }
 
 .order-form-coment::placeholder {
@@ -783,15 +801,18 @@ button {
     border-color: #4D5AE5;
 }
 
+.order-form-checkbox-wrapper {
+    margin-bottom: 24px;
+}
+
 
 .order-form-checkbox-label {
     display: inline-block;
     color: #8E8F99;
     font-size: 12px;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1.17;
     letter-spacing: 0.04em;
-    margin-bottom: 24px;
 }
 
 .order-form-link {
@@ -809,12 +830,14 @@ button {
     cursor: pointer;
     fill: transparent;
     margin-right: 8px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .order-form-checkbox:checked+.order-form-checkbox-label>.order-form-castom-checkbox {
     background-color: #404BBF;
-    border-color: #404BBF;
-    fill: #F4F4FD;
+    border: none fill: #F4F4FD;
 }
 
 .order-form-checkbox:focus+.order-form-checkbox-label>.order-form-castom-checkbox {
@@ -834,9 +857,16 @@ button {
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.04em;
+    border: none;
     border-radius: 4px;
     background: #4D5AE5;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     margin-left: auto;
     margin-right: auto;
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.order-form-button:hover,
+.order-form-button:focus {
+    background-color: #404BBF;
 }
